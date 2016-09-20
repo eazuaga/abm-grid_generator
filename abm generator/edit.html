@@ -1,0 +1,57 @@
+<html>
+<head>
+<script src="formGenerator/formGenerator.js" type="text/javascript"></script>
+</head>
+<body>
+ <div >
+  <form id="abm">
+
+  <div class="botonera pull-right"><button type="reset" class="btn btn-default btn-cancel">Cancelar</button><button type="submit" class="btn  btn-primary btn-save vldr-submit">Guardar</button>
+  </div>
+  </form>
+ </div>
+</body>
+<html>
+
+<script id="tplForm" type="text/html">
+<div class="form-group">
+	<label for="txt-{fieldName}">{fieldName}<span class="flag-required">*</span></label>
+	<input type="text" class="form-control  field-required " id="txt-{fieldName}" data-field="name" value="{value}" >
+</div>
+</script>
+
+<script type="text/html">
+	<div class="botonera pull-right"><button type="reset" class="btn btn-default btn-cancel">Cancelar</button><button type="submit" class="btn  btn-primary btn-save vldr-submit">Guardar</button></div>
+</script>
+
+
+<script type="text/javascript">
+
+
+//implemnetarion
+
+var data = [
+  { nombre:"Eduarod" , apellido:"azuaga" , dni:"30103343" , id:"1"},
+  { nombre:"TOMAS" , apellido:"azuaga" , dni:"301ASDADS03343" , id:"2"},
+  { nombre:"LEON" , apellido:"azuaga" , dni:"ASDSD0103343" , id:"3"},
+  { nombre:"LEON" , apellido:"azuaga" , dni:"ASDSD0103343" , id:"4"},
+  { nombre:"LEON" , apellido:"azuaga" , dni:"ASDSD0103343", id:"5"}
+];
+var columns = [
+{ field:"nombre" , text:"nombre" , type:"text"},
+{field:"apellido" , text:"apellido" , type:"text"},
+{field:"dni" , text:"dni" , type:"text"},
+{field:"id" , text:"acciones" , type:"tplEditDelete"}
+
+]
+
+document.addEventListener('DOMContentLoaded', function () {
+
+	var g = new Abm(columns ,data);
+	g.create();
+ });
+ 
+
+
+ 
+</script>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<script src="gridGenerator/gridGenerator.js" type="text/javascript"></script>
+<script src="formGenerator/formGenerator.js" type="text/javascript"></script>
+
+<script src="controllers/users.js" type="text/javascript"></script>
+<script src="../jq/route.js" type="text/javascript"></script>
+
+</head>
+<body>
+ <div >
+  <table id="grid">  </table>
+  
+  <form id="abm">
+
+	  <div class="botonera pull-right"><button type="reset" class="btn btn-default btn-cancel">Cancelar</button><button type="submit" class="btn  btn-primary btn-save vldr-submit">Guardar</button>
+	  </div>
+  </form>
+ </div>
+</body>
+<html>
+
+<script id="tplEditDelete" type="text/html">
+	<a class="lnk lnk-edit lnk-icon" data-entity-id="{id}" href="#/User/{id}" aria-label="Editar"><i class="fa fa-pencil">edit</i></a>
+	<a class="lnk lnk-delete lnk-icon" data-entity-id="{id}" href="{url-delete}" aria-label="Eliminar"><i class="fa fa-trash-o"></i>delete</a>
+</script>
+<script id="tplForm" type="text/html">
+<div class="form-group">
+	<label for="txt-{fieldName}">{fieldName}<span class="flag-required">*</span></label>
+	<input type="text" class="form-control  field-required " id="txt-{fieldName}" data-field="name" value="{value}" >
+</div>
+</script>
+
+<script type="text/html">
+	<div class="botonera pull-right"><button type="reset" class="btn btn-default btn-cancel">Cancelar</button><button type="submit" class="btn  btn-primary btn-save vldr-submit">Guardar</button></div>
+</script>
+
+<script type="text/javascript">
+
+
+//implemnetarion
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+	
+ });
+ 
+
+
+ 
+</script>
