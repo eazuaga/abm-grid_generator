@@ -20,15 +20,26 @@ var columns = [
 	
 	//ver si esto puede ser generico
    if(id === undefined){ 
-        var form = document.getElementById('abm'); //
+        var form = document.getElementById('abm'); //k
         form.innerHTML = ''
 	   var g = new Grid(columns ,data);
 	   g.create();
    }else {
+        var IdIsNumber =  isNumber(id);
         var form = document.getElementById('grid'); //
         form.innerHTML = ''
-		var g = new Abm(columns ,data);
-		g.create();
+		var action = IdIsNumber ? "edit" :"create"
+		var options = { url : null , id : id ,action :action };
+		var g = new Abm(columns ,data ,options);
+		console.log(g);
+		if(IdIsNumber){
+			g.edit();
+		} else {
+		   	g.create();
+		}
+	
    }
+   //helper
+   function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
 };
