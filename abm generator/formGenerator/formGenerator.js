@@ -16,7 +16,8 @@ Abm.prototype.create = function(){
 Abm.prototype.edit = function(){
 	var tpl = "";
 	for(var i = 0 ; i < this.columns.length ; i++ ){
-		tpl +=	this.insertField(this.data[0],i);
+		//tpl +=	this.insertField(this.data[0],i);
+		tpl +=	this.insertField(this.data,i);
 	}
 	var form = document.getElementById('abm'); //
 	form.innerHTML = tpl;
