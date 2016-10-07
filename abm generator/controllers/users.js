@@ -1,9 +1,13 @@
 var controller = controller || {};
 
+
+
 controller.user = function (id) {
     document.title = 'Generics - home';
-
+    this.base = controller.base();
 };
+
+
 controller.user.getAll = function(){
 	
 	   //getdata
@@ -31,8 +35,8 @@ controller.user.edit = function(id){
         var form = document.getElementById('grid'); //
         form.innerHTML = ''
 		//var action = IdIsNumber ? "edit" :"create"
-		var action =  "edit" ;
-		var options = { url : null , id : id ,action :action };
+	//	var action =  "edit" ;
+		var options = { url : null , id : id  };
 		var g = new Abm(columns ,data ,options);
 		console.log(g);
 		
@@ -54,8 +58,8 @@ controller.user.create = function(){
         var form = document.getElementById('grid'); //
         form.innerHTML = ''
 		//var action = IdIsNumber ? "edit" :"create"
-		var action =  "create" ;
-		var options = { url : null , id : null ,action :action };
+	//	var action =  "create" ;
+		var options = { url : null , id : null  };
 		var g = new Abm(columns ,null ,options);
 		console.log(g);
 		g.create();

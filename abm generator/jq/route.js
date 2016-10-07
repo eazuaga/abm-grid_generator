@@ -1,6 +1,14 @@
 var routes = {};
 var params = [];
 var controller = controller || {};
+
+controller.base = function (){
+	this.View = function(){
+	  console.log("retuen view");
+	}
+
+}
+
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 function change() {
      params = window.location.hash.substring(2).split('/');
