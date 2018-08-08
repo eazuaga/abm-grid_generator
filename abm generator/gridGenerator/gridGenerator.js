@@ -32,3 +32,21 @@ Grid.prototype.create = function(){
 		this.insertRow(this.data[i],i);
 	}
 }
+Grid.prototype.CreateHead = function(){
+	var tabla = document.getElementById('grid');
+	var tpl = 	"<thead><tr>{th}</tr></thead>";
+	var inner_thead = "";
+	var tpl_th = 	"<th>{title}</th>";
+	for(var i = 0 ; i < this.columns.length ; i++ ){
+		//console.log(this.columns[i].field);
+		inner_thead+= tpl_th.replace(/{title}/g ,this.columns[i].field );
+	}
+//	var l_tpl = tpl.replace('{th}' ,inner_thead );
+	//console.log(l_tpl);
+	var header = tabla.createTHead();
+	header.innerHTML = inner_thead;
+	//var row = header.insertRow(0);   
+//	tabla.appendChild(l_tpl);
+
+	
+}
